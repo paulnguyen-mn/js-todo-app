@@ -1,3 +1,9 @@
+import todoFormUtils, { getFormValues, hello } from './todoForm.js';
+// import todoFormUtils from './todoForm.js';
+
+todoFormUtils.hello();
+
+
 const handleTodoEdit = () => {
   console.log('Edit ne');
 };
@@ -105,22 +111,22 @@ renderTodoList(todoList);
 // ---------------------------
 // ADD TODO 
 
-const getFormValues = () => {
-  const todoForm = document.querySelector('#todoForm');
-  if (!todoForm) return {};
+// const getFormValues = () => {
+//   const todoForm = document.querySelector('#todoForm');
+//   if (!todoForm) return {};
 
-  const formValues = {};
-  const controlNameList = ['title'];
-  for (const controlName of controlNameList) {
-    const controlSelector = `[name=${controlName}]`;
-    const control = todoForm.querySelector(controlSelector);
-    const controlValue = control && control.value;
+//   const formValues = {};
+//   const controlNameList = ['title'];
+//   for (const controlName of controlNameList) {
+//     const controlSelector = `[name=${controlName}]`;
+//     const control = todoForm.querySelector(controlSelector);
+//     const controlValue = control ? control.value : control;
 
-    formValues[controlName] = controlValue;
-  }
+//     formValues[controlName] = controlValue;
+//   }
 
-  return formValues;
-};
+//   return formValues;
+// };
 
 const handleTodoFormSubmit = (e, todoForm) => {
   console.log('Form submit: ', getFormValues());
